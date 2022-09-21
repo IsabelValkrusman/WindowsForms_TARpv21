@@ -1,6 +1,6 @@
-﻿namespace WindowsForms
+﻿namespace WindowsForms_tulusa
 {
-    partial class MinuVorm
+    partial class MinuOmaVorm
     {
         /// <summary>
         /// Required designer variable.
