@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms_TARpv21;
 
-namespace WindowsForms_tulusa
+namespace WindowsForms_valkrusman
 {
     public partial class MinuOmaVorm : Form
     {
@@ -275,49 +275,30 @@ namespace WindowsForms_tulusa
             }
         }
 
-        private void Rnuppud_Changed(object sender, EventArgs e)
-        {
-            if (rnupp1.Checked == true)
-            {
-                pilt.Location = new Point(x += 30, y);
-                rnupp1.Checked = false;
-            }
-            else if (rnupp2.Checked == true)
-            {
-                pilt.Location = new Point(x -= 30, y);
-                rnupp2.Checked = false;
-            }
-            else if (rnupp3.Checked == true)
-            {
-                pilt.Location = new Point(x, y -= 30);
-                rnupp3.Checked = false;
-            }
-            else if (rnupp4.Checked == true)
-            {
-                pilt.Location = new Point(x, y += 30);
-                rnupp4.Checked = false;
-            }
-            /*if (rnupp1.Checked)
-            {
-                pilt.Location = new Point(pilt.Left + 10, pilt.Top);
-                rnupp1.Checked = false;
-            }
-            if (rnupp2.Checked)
-            {
-                pilt.Location = new Point(pilt.Left - 10, pilt.Top);
-                rnupp2.Checked = false;
-            }
-            if (rnupp3.Checked)
-            {
-                pilt.Location = new Point(pilt.Left, pilt.Top - 10);
-                rnupp3.Checked = false;
-            }
-            if (rnupp4.Checked)
-            {
-                pilt.Location = new Point(pilt.Left, pilt.Top + 10);
-                rnupp4.Checked = false;
-            }*/
-        }
+        //private void Rnuppud_Changed(object sender, EventArgs e)
+        //{
+        //    if (rnupp1.Checked == true)
+        //    {
+        //        pilt.Location = new Point(x += 30, y);
+        //        rnupp1.Checked = false;
+        //    }
+        //    else if (rnupp2.Checked == true)
+        //    {
+        //        pilt.Location = new Point(x -= 30, y);
+        //        rnupp2.Checked = false;
+        //    }
+        //    else if (rnupp3.Checked == true)
+        //    {
+        //        pilt.Location = new Point(x, y -= 30);
+        //        rnupp3.Checked = false;
+        //    }
+        //    else if (rnupp4.Checked == true)
+        //    {
+        //        pilt.Location = new Point(x, y += 30);
+        //        rnupp4.Checked = false;
+        //    }
+            
+        //}
         private void Mruut1_2_CheckedChanged1(object sender, EventArgs e)
         {
             if (mruut1.Checked == true && mruut2.Checked == true)
@@ -405,6 +386,11 @@ namespace WindowsForms_tulusa
                 Height = 600;
                 Width = 900;
             }
+        }
+
+        private void MinuOmaVorm_Load(object sender, EventArgs e)
+        {
+
         }
 
         //private void Nupp3_Click(object sender, EventArgs e)

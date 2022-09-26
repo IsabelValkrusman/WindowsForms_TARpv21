@@ -1,4 +1,4 @@
-﻿namespace WindowsForms_tulusa
+﻿namespace WindowsForms_valkrusman
 {
     partial class MinuOmaVorm
     {
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // MinuVorm
+            // MinuOmaVorm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 450);
-            this.Name = "MinuVorm";
+            this.Name = "MinuOmaVorm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MinuOmaVorm_Load);
             this.ResumeLayout(false);
 
         }

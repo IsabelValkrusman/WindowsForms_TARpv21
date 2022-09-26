@@ -48,31 +48,50 @@ namespace WindowsForms_TARpv21
             var vastus = MessageBox.Show("Kas tahad muusikat kuulata?", "Küsimus", MessageBoxButtons.YesNo);
             if (vastus == DialogResult.Yes)
             {
-                using (var muusika = new SoundPlayer(@"..\..\music.wav"))
+                if (nupp1.Checked == true)
+                {
+                    using (var muusika = new SoundPlayer(@"..\..\music.wav"))
                 {
                     MessageBox.Show("Muusika mängib");
                     muusika.Play();
 
-                };
+                }
+                    
+
+                        nupp1.Checked = false;
+                }
+
+                else if (nupp2.Checked==true)
+            {
+                    using (var muusika = new SoundPlayer(@"..\..\musika.wav"))
+                    {
+                        muusika.Play();
+                        MessageBox.Show("mängib: ","Muusika");
+                        
+                    }
+                        nupp2.Checked=false;
+            }
+
+            else
+            {
+                    MessageBox.Show("Mitte midagi ei valitud!");
+            }          
+            else
+            {
+                  MessageBox.Show("Mitte midagi ei ole valitud");
+            }
             }
             else
             {
-                MessageBox.Show(":(");
-
+    
+                    MessageBox.Show(":(");
             }
-            else 
-            {
-                nupp1 = new RadioButton
-                {
-
-                    Width = 112,
-
-
-                };
-
-            }
-
         }
-    }
 
+    }
 }
+
+
+
+
+
