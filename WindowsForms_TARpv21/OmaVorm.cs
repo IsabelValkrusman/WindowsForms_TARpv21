@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace WindowsForms_TARpv21
 {
-   public class OmaVorm : Form
+public class OmaVorm : Form
+
     {
         public OmaVorm() { }
         RadioButton nupp1, nupp2;
@@ -93,7 +94,8 @@ namespace WindowsForms_TARpv21
 
                 else if (nupp2.Checked == true)
                 {
-                    using (var muusika = new SoundPlayer(@"..\..\sound.wav"))
+
+                    using (var muusika = new SoundPlayer(@"..\..\music.wav"))
                     {
                         muusika.Play();
                         MessageBox.Show("mängib: ", "Muusika");
@@ -112,8 +114,9 @@ namespace WindowsForms_TARpv21
 
                 MessageBox.Show(":(");
 
-                }
-                    
+
+            }
+
 
         }
 
