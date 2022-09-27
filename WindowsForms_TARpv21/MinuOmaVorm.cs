@@ -13,14 +13,14 @@ using WindowsForms_TARpv21;
 
 namespace WindowsForms_valkrusman
 {
-    public partial class MinuOmaVorm : Form
+   public partial class MinuOmaVorm : Form
     {
         Random random = new Random(); 
 
         TreeView puu;
         Button nupp;
         Button nupp2;
-        //Button nupp3;
+        Button nupp3;
         Label silt;
         CheckBox mruut1;
         CheckBox mruut2;
@@ -151,7 +151,7 @@ namespace WindowsForms_valkrusman
                     Height = 25
                 };
                 //mruut1.Click += Mruut1_Click;
-                //mruut1.CheckedChanged += Mruut1_CheckedChanged;
+                mruut1.CheckedChanged += Mruut1_CheckedChanged;
                 mruut2 = new CheckBox
                 {
                     Checked = false,
@@ -160,7 +160,7 @@ namespace WindowsForms_valkrusman
                     Width = 100,
                     Height = 25
                 };
-                //mruut2.CheckedChanged += Mruut2_CheckedChanged;
+                mruut2.CheckedChanged += Mruut2_CheckedChanged;
                 //mruut2.Click += Mruut2_Click;
                 mruut1.CheckedChanged += Mruut1_2_CheckedChanged1;
                 mruut2.CheckedChanged += Mruut1_2_CheckedChanged1;
@@ -227,21 +227,21 @@ namespace WindowsForms_valkrusman
                     Minimum = 0,
                     Maximum = 100,
                     Step = 1,
-                    //Dock = DockStyle.Bottom
+                    Dock = DockStyle.Bottom
                 };
-                //nupp3 = new Button
-                //{
-                //    Width = 50,
-                //    Height = 30,
-                //    Location = new Point(350, 475),
-                //    BackColor = Color.Lavender,
-                //};
-                //nupp3.Click += Nupp3_Click1;
-                /*aeg = new Timer();
+                nupp3 = new Button
+                {
+                    Width = 50,
+                    Height = 30,
+                    Location = new Point(350, 475),
+                    BackColor = Color.Lavender,
+                };
+                nupp3.Click += Nupp3_Click;
+                aeg = new Timer();
                 aeg.Enabled = true;
-                aeg.Tick += Aeg_Tick;*/
+                //aeg.Tick += Aeg_Tick;
                 this.Controls.Add(riba);
-                //this.Controls.Add(nupp3);
+                this.Controls.Add(nupp3);
 
             }
             else if (e.Node.Text == "Tekstkast-TextBox")
@@ -275,30 +275,30 @@ namespace WindowsForms_valkrusman
             }
         }
 
-        //private void Rnuppud_Changed(object sender, EventArgs e)
-        //{
-        //    if (rnupp1.Checked == true)
-        //    {
-        //        pilt.Location = new Point(x += 30, y);
-        //        rnupp1.Checked = false;
-        //    }
-        //    else if (rnupp2.Checked == true)
-        //    {
-        //        pilt.Location = new Point(x -= 30, y);
-        //        rnupp2.Checked = false;
-        //    }
-        //    else if (rnupp3.Checked == true)
-        //    {
-        //        pilt.Location = new Point(x, y -= 30);
-        //        rnupp3.Checked = false;
-        //    }
-        //    else if (rnupp4.Checked == true)
-        //    {
-        //        pilt.Location = new Point(x, y += 30);
-        //        rnupp4.Checked = false;
-        //    }
-            
-        //}
+        private void Rnuppud_Changed(object sender, EventArgs e)
+        {
+            if (rnupp1.Checked == true)
+            {
+                pilt.Location = new Point(x += 30, y);
+                rnupp1.Checked = false;
+            }
+            else if (rnupp2.Checked == true)
+            {
+                pilt.Location = new Point(x -= 30, y);
+                rnupp2.Checked = false;
+            }
+            else if (rnupp3.Checked == true)
+            {
+                pilt.Location = new Point(x, y -= 30);
+                rnupp3.Checked = false;
+            }
+            else if (rnupp4.Checked == true)
+            {
+                pilt.Location = new Point(x, y += 30);
+                rnupp4.Checked = false;
+            }
+
+        }
         private void Mruut1_2_CheckedChanged1(object sender, EventArgs e)
         {
             if (mruut1.Checked == true && mruut2.Checked == true)
@@ -393,18 +393,18 @@ namespace WindowsForms_valkrusman
 
         }
 
-        //private void Nupp3_Click(object sender, EventArgs e)
-        //{
-        //    aeg = new Timer();
-        //    aeg.Enabled = true;
-        //    aeg.Tick += Aeg_Tick;
+        private void Nupp3_Click(object sender, EventArgs e)
+        {
+            aeg = new Timer();
+            aeg.Enabled = true;
+            //aeg.Tick += Aeg_Tick;
 
-        //}
+        }
 
 
         private void Silt_MouseEnter(object sender, EventArgs e)
         {
-            silt.BackColor = Color.Transparent;//prozracnii cvet
+            silt.BackColor = Color.Transparent;
             silt.ForeColor = Color.LightSalmon;
         }
         private void Silt_MouseLeave(object sender, EventArgs e)
