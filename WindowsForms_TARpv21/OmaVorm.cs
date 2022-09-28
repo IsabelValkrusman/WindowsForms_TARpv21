@@ -14,8 +14,11 @@ namespace WindowsForms_TARpv21
 public class OmaVorm : Form
 
     {
+        public RadioButton laul1, laul2;
+        public Button nupp;
+        public Label failinimi;
         public OmaVorm() { }
-        RadioButton nupp1, nupp2;
+        
         //private string v1;
         //private string v2;
         //private string v3;
@@ -24,7 +27,7 @@ public class OmaVorm : Form
         {
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Text = Peakiri;
-            Button nupp = new Button
+            nupp = new Button
             {
                 Text = Nupp,
                 Location = new System.Drawing.Point(50, 50),
@@ -34,7 +37,7 @@ public class OmaVorm : Form
             };
             nupp.Click += Nupp_Click;
 
-            Label failinimi = new Label
+            failinimi = new Label
             {
                 Text = Fail,
                 Location = new System.Drawing.Point(50, 100),
@@ -42,26 +45,26 @@ public class OmaVorm : Form
                 BackColor = System.Drawing.Color.AliceBlue,
             };
 
-            nupp1 = new RadioButton
+            laul1 = new RadioButton
             {
-                Text = "nupp",
+                Text = "Laul 1",
                 Location = new System.Drawing.Point(50, 150),
                 Size = new System.Drawing.Size(100, 25),
                 BackColor = System.Drawing.Color.AliceBlue,
             };
 
 
-            nupp2 = new RadioButton
+            laul2 = new RadioButton
             {
-                Text = "nupp",
+                Text = "Laul 2",
                 Location = new System.Drawing.Point(50, 175),
                 Size = new System.Drawing.Size(100, 20),
                 BackColor = System.Drawing.Color.AliceBlue,
             };
             this.Controls.Add(nupp);
             this.Controls.Add(failinimi);
-            this.Controls.Add(nupp2);
-            this.Controls.Add(nupp1);
+            this.Controls.Add(laul1);
+            this.Controls.Add(laul2);
         }
 
         /*public OmaVorm(string v1, string v2, string v3)
@@ -73,35 +76,32 @@ public class OmaVorm : Form
 
         private void Nupp_Click(object sender, EventArgs e)
         {
-            Button nupp_sender = (Button)sender;
             var vastus = MessageBox.Show("Kas tahad muusikat kuulata?", "Küsimus", MessageBoxButtons.YesNo);
             if (vastus == DialogResult.Yes)
             {
-                if (nupp1.Checked == true)
+                if (laul1.Checked == true)
 
                 {
+                    failinimi.Text = "Laul 1";
                     using (var muusika = new SoundPlayer(@"..\..\music.wav"))
                     {
-                        MessageBox.Show("Muusika mängib");
+                        MessageBox.Show("Mängib muusika");
                         muusika.Play();
-
-
                     }
 
 
-                    nupp1.Checked = false;
+                    laul1.Checked = false;
                 }
 
-                else if (nupp2.Checked == true)
+                else if (laul2.Checked == true)
                 {
-
+                    failinimi.Text = "Laul 2";
                     using (var muusika = new SoundPlayer(@"..\..\music.wav"))
                     {
+                        MessageBox.Show("Mängib muusika");
                         muusika.Play();
-                        MessageBox.Show("mängib: ", "Muusika");
-
                     }
-                    nupp2.Checked = false;
+                    laul2.Checked = false;
                 }
 
                 else
